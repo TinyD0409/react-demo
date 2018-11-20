@@ -1,4 +1,4 @@
-## React 学习历程
+## React UI仿简书 功能仿Wiki 的 Demo
 <div style="text-align:center;width:150px;">![logo](./public/static/react.svg)</div>
 <br>
 
