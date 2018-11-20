@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { HomeWrapper, HomeLeft, HomeRight, BackTop, Toprev, Tonext} from './style'
+import { HomeWrapper, HomeLeft, HomeRight, BackTop} from './style'
 import Topic from './components/Topic'
 import List from './components/List'
 import Recommend from './components/Recommend'
@@ -20,7 +20,7 @@ class Home extends Component {
     return (
       <HomeWrapper>
         <HomeLeft>
-        <Carousel autoplay nextArrow prevArrow>
+        <Carousel autoplay>
           <div><img className='banner-img' src="https://upload.jianshu.io/admin_banners/web_images/4526/73a226693f83ee2920d31207c881b7c6eeb46761.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/1250/h/540" alt=""/></div>
           <div><img className='banner-img' src="https://upload.jianshu.io/admin_banners/web_images/4526/73a226693f83ee2920d31207c881b7c6eeb46761.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/1250/h/540" alt=""/></div>
           <div><img className='banner-img' src="https://upload.jianshu.io/admin_banners/web_images/4526/73a226693f83ee2920d31207c881b7c6eeb46761.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/1250/h/540" alt=""/></div>

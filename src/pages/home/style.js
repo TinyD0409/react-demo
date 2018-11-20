@@ -41,6 +41,7 @@ export const TopicItem = styled.div`
   color: #000;
   border: 1px solid #dcdcdc;
   border-radius:4px;
+  cursor: pointer;
   .topic-pic {
     width:32px;
     height:32px;
@@ -109,4 +110,5 @@ export const BackTop = styled.div`
   border: 1px solid #ccc;
   background:white;
   font-size: 14px;
+  cursor: pointer;
 `

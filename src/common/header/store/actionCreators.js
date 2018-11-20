@@ -34,7 +34,7 @@ export const getList = () => {
 export const searchStart = (v) => {
   var linkapi = 'https://zh.wikipedia.org/w/api.php?origin=*&page='+ v + '&action=mobileview&format=json&noheadings=true&pilicense=any&prop=sections|text|lastmodified|lastmodifiedby|languagecount|id|protection|editable|displaytitle|thumb|description|image|revision|namespace&sectionprop=toclevel|line|anchor|level|number|fromtitle|index&sections=all&thumbwidth=640'
   return (dispatch) => {
-    axios.get(linkapi).then((res) => {
+    return axios.get(linkapi).then((res) => {
       console.log(res)
       let data = res.data.mobileview 
       console.log(data)
@@ -55,5 +55,5 @@ const changeList = (data) =>({
 })
 const getResult = (d) => ({
   type: constants.GET_RESULT,
-  data: fromJS(d) 
+  data: d
 })

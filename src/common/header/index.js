@@ -4,6 +4,8 @@ import  * as actionCreators  from './store/actionCreators' // * 表示所有
 import { HeaderWrapper, Logo, Nav, NavItem, NavSearch, Addition, Button,SearchInfoItem, SearchWrapper,SearchInfo,SearchInfoTitle,SearchInfoSwitch,SearchInfoList,A } from './style.js'
 import { connect } from 'react-redux'
 import { actionCreators as loginActionCreators } from '../../pages/login/store'
+import {withRouter} from 'react-router-dom'
+
 class Header extends Component { //可以写成无状态组件
   getListArea () {
     const pageList = [];
@@ -106,7 +108,15 @@ const mapDispatchToProps = (dispatch) => {
     },
     handleSearchStart(v) {
       console.log(v)
-      dispatch(actionCreators.searchStart(v)) 
+      let props = this  //将所有的props 都合并在一起，而这里也确实是props自己，所以数据都在this上
+      dispatch(actionCreators.searchStart(v))
+        .then(() => {
+          console.log(props)
+          let url = '/search=' + props.inputValue
+          props.history.push(url)
+          // this.props.match 
+          // this.props.xxxx
+        })
     },
     handleMouseEnter(){
       dispatch(actionCreators.mouseEnter())
@@ -134,4 +144,6 @@ const mapDispatchToProps = (dispatch) => {
     }
   }
 }
-export default connect(mapStateToProps,mapDispatchToProps)(Header)
+export default withRouter(
+  connect(mapStateToProps,mapDispatchToProps)(Header)
+)

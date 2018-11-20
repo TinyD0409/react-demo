@@ -34,8 +34,7 @@ export default (state = defaultState, action) => {
   if(action.type === constants.CHANGE_PAGE) {
     return state.set('page',action.page)
   }
-  if(action.type === constants.GET_RESULT) {
-    
+  if(action.type === constants.GET_RESULT) {   
     return state.set('result', action.data)
   }
   return state
